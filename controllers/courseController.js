@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 
 const getAllCourses = async (req, res) => {
     try {
-        const [rows] = await pool.query('SELECT course_id, course_code, course_name,dept_id,user_id created_at, updated_at FROM  courses');
+        const [rows] = await pool.query('SELECT course_id, course_code, course_name,dept_id,user_id, created_at, updated_at FROM  courses');
         res.json(rows);
     }catch (err) {
         res.status(500).json({ error: err.message });
