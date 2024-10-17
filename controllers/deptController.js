@@ -28,7 +28,7 @@ const getDepartmentById = async (req, res) => {
 };
 
 const createDepartment = async (req, res) => {
-    const {dept_code, dept_name, user_id } = req.body;
+    const {dept_code, dept_name, user_id} = req.body;
 
     try {
         const [result] = await pool.query('INSERT INTO departments (dept_code, dept_name, user_id) VALUES (?, ?, ?)', [dept_code,dept_name, user_id]);
